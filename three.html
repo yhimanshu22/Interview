@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+   
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+    <button onclick="addLanguage()" ="button">add more language</button>
+
+    <script>
+     
+     function addLanguage(){
+        addOptiLang("ruby")
+     }
+
+     function addLang(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li);
+     }
+
+     addLang('java')
+     addLang('python')
+
+
+      //optimise approach
+     function addOptiLang(langName){
+        const li = document.createElement('li');
+        const addText = document.createTextNode(langName);
+        li.appendChild(addText);
+        document.querySelector('.language').appendChild(li);
+
+     }
+
+     
+     addOptiLang('c++')
+
+
+    </script>
+    
+</body>
+</html>
