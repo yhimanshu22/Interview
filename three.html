@@ -11,7 +11,8 @@
         <li>Javascript</li>
     </ul>
 
-    <button onclick="addLanguage()" ="button">add more language</button>
+    <button onclick="addLanguage()" ="button">add</button>
+    <button onclick="remove()" ="button">remove</button>
 
     <script>
      
@@ -37,10 +38,26 @@
         document.querySelector('.language').appendChild(li);
 
      }
-
-     
      addOptiLang('c++')
 
+     //edit--------------
+
+     const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "mojo"
+
+    const newli = document.createElement('li');
+    newli.textContent = "mojo"
+    secondLang.replaceWith(newli)
+
+    //edit -------------
+    const firstLang = document.querySelector('li:first-child');
+    firstLang.outerHTML = '<li>typescript</li>'
+
+    //remove
+   function remove(){
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+   }
 
     </script>
     
